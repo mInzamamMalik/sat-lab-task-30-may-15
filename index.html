@@ -3,36 +3,49 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <script src="./bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="main.js"></script>
 </head>
 
 <body align="center" ng-app="myApp" ng-controller="myCtrl">
 
-
-<button>add</button>
-<button>view</button>
-
+<button ng-click="addtab()">add</button>
+<button ng-click="viewtab()">view</button>
 
 
-<div>
+
+<div ng-show="showform">
+
     <br />
     <input type="text" placeholder="name"   ng-model="new.name" /><br />
-    <input type="text" placeholder="age"    ng-model="new.age" /><br />
+    <input type="number" placeholder="age"    ng-model="new.age" /><br />
     <input type="email" placeholder="email" ng-model="new.email" /><br />
-    <button>submit</button>
-    <button>clear form</button>
+
+    <button ng-show="updatebtn" ng-click="updateentry()">update</button>
+
+    <button ng-show="submitbtn" ng-click="addentry()">submit</button>
+
+    <button ng-click="clearform()">clear form</button>
+
 </div>
 
 
-<div>
+<div ng-show="showentry">
     <br />
     <table border="1px solid black" align="center" width="500px">
         <tr>
             <th>S#</th><th>Name</th><th>Age</th><th>Email</th><th>Action</th>
         </tr>
-        <tr>
-            <td>S#</td><td ng-bind="store[0].new.name">Name</td><td ng-bind="new.age">Age</td><td ng-bind="new.email">Email</td><td>Action</td>
+
+        <tr ng-repeat="d in store">
+
+            <td ng-bind="$index + 1">S#</td>
+            <td ng-bind="d.name"></td>
+            <td ng-bind="d.age">Age</td>
+            <td ng-bind="d.email">Email</td>
+            <td>
+                <button ng-click="editentry($index)">eidt</button>
+            </td>
         </tr>
 
 
