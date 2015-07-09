@@ -2,8 +2,6 @@
 <input type="number" placeholder="age"  ng-model="add.age" /><br />
 <input type="email" placeholder="email" ng-model="add.email" /><br />
 
-<button ng-show="add.updatebtn" ng-click="add.updateentry()">update</button>
+<md-button ng-click="add.addentry()">submit</md-button>
 
-<button ng-show="add.submitbtn" ng-click="add.addentry()">submit</button>
-
-<button ng-click="add.clearform()">clear form</button>
+<md-button ng-click="add.clearform()">clear form</md-button>

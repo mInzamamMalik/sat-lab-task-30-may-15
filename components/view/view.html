@@ -1,6 +1,10 @@
 <table border="1px solid black" align="center" width="500px">
     <tr>
-        <th>S#</th><th>Name</th><th>Age</th><th>Email</th><th>Action</th>
+        <th>S#</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th colspan="2">Action</th>
     </tr>
 
     <tr ng-repeat="d in view.users">
@@ -10,8 +14,10 @@
         <td ng-bind="d.age"></td>
         <td ng-bind="d.email"></td>
         <td>
-            <button ng-click="view.editentry($index)">Eidt</button>
-            <button ng-click="view.deleteentry($index)">Delete</button>
+            <md-button ng-click="view.editentry($index)">Eidt</md-button>
+        </td>
+        <td>
+            <md-button ng-click="view.deleteentry($index)">Delete</md-button>
         </td>
     </tr>
 </table>

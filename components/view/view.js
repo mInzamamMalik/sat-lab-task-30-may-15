@@ -20,7 +20,7 @@ app.controller("ViewController", function (dataservice, $location) {
     this.editentry = function (index) {
         dataservice.currentuser = index;
 
-        $location.path('/add');
+        $location.path('/update');
 
     };
 
