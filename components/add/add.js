@@ -6,6 +6,8 @@ var app = angular.module("app.add",[]);
 
 app.controller("AddController",function(){
 
-
+    this.abc = function () {
+        alert();
+    }
 
 });

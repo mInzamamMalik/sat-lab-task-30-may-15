@@ -3,14 +3,15 @@
         <th>S#</th><th>Name</th><th>Age</th><th>Email</th><th>Action</th>
     </tr>
 
-    <tr ng-repeat="d in control.store">
+    <tr ng-repeat="d in view.users">
 
-        <td ng-bind="$index + 1">S#</td>
+        <td ng-bind="$index + 1"></td>
         <td ng-bind="d.name"></td>
-        <td ng-bind="d.age">Age</td>
-        <td ng-bind="d.email">Email</td>
+        <td ng-bind="d.age"></td>
+        <td ng-bind="d.email"></td>
         <td>
-            <button ng-click="control.editentry($index)">eidt</button>
+            <button ng-click="view.editentry($index)">Eidt</button>
+            <button ng-click="view.deleteentry($index)">Delete</button>
         </td>
     </tr>
 </table>
