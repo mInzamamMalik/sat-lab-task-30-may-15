@@ -3,76 +3,82 @@
  */
 
 
-var app = angular.module("myApp",[]);
+var app = angular.module("myApp",['ngNewRouter']);
 
-app.controller("myCtrl",function($scope){
+app.controller("AppController",AppController);
+
+AppController.$routeConfig = [
+        {path : "/" , component : "home"}
+    ]
+
+function AppController($router){
 
 
-    $scope.showform = false;
-    $scope.showentry = false;
-    $scope.addtab = function(){
+    this.showform = false;
+    this.showentry = false;
+    this.addtab = function(){
 
-      $scope.showform = true;
-      $scope.showentry = false;
+        this.showform = true;
+        this.showentry = false;
 
 
     };
-    $scope.viewtab = function(){
+    this.viewtab = function(){
 
-      $scope.showform = false;
-      $scope.showentry = true;
+        this.showform = false;
+        this.showentry = true;
 
 
     };
 
-    $scope.store = [];
+    this.store = [];
 
-    $scope.addentry = function(){
+    this.addentry = function(){
 
 
-        $scope.store.push(
+        this.store.push(
 
             {
-                name:$scope.new.name,
-                age:$scope.new.age,
-                email:$scope.new.email
+                name:   this.new.name,
+                age:    this.new.age,
+                email:  this.new.email
             }
         );
 
-        $scope.new.name = "";
-        $scope.new.age = "";
-        $scope.new.email = "";
+        this.new.name = "";
+        this.new.age = "";
+        this.new.email = "";
 
     };
-    $scope.updateentry = function(){
+    this.updateentry = function(){
 
 
-
-    };
-
-    $scope.clearform = function(){
-
-        $scope.new.name = "";
-        $scope.new.age = "";
-        $scope.new.email = "";
 
     };
 
-    $scope.updatebtn = false;
-    $scope.submitbtn = true;
+    this.clearform = function(){
 
-    $scope.editentry = function(d){
+        this.new.name = "";
+        this.new.age = "";
+        this.new.email = "";
 
-        $scope.new.name =   d.name;
-        $scope.new.age  =   d.age;
-        $scope.new.email =  d.email;
+    };
 
-        $scope.updatebtn = true;
-        $scope.submitbtn = false;
-        $scope.showform = true;
+    this.updatebtn = false;
+    this.submitbtn = true;
+
+    this.editentry = function(d){
+
+        this.new.name =   d.name;
+        this.new.age  =   d.age;
+        this.new.email =  d.email;
+
+        this.updatebtn = true;
+        this.submitbtn = false;
+        this.showform = true;
     }
 
 
 
 
-});
+}
