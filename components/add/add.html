@@ -1,0 +1,9 @@
+<input type="text" placeholder="name"   ng-model="add.name" /><br />
+<input type="number" placeholder="age"  ng-model="add.age" /><br />
+<input type="email" placeholder="email" ng-model="add.email" /><br />
+
+<button ng-show="add.updatebtn" ng-click="add.updateentry()">update</button>
+
+<button ng-show="add.submitbtn" ng-click="add.addentry()">submit</button>
+
+<button ng-click="add.clearform()">clear form</button>

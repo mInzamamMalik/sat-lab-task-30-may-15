@@ -1,0 +1,22 @@
+{
+  "name": "sat-lab-task-30-may-15",
+  "version": "0.0.0",
+  "homepage": "https://github.com/malikasinger/sat-lab-task-30-may-15",
+  "authors": [
+    "malikasinger <malikasinger@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-new-router": "~0.5.3",
+    "angular": "~1.4.0",
+    "firebase": "~2.2.7",
+    "angularfire": "~1.1.2"
+  }
+}

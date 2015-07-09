@@ -1,0 +1,16 @@
+<table border="1px solid black" align="center" width="500px">
+    <tr>
+        <th>S#</th><th>Name</th><th>Age</th><th>Email</th><th>Action</th>
+    </tr>
+
+    <tr ng-repeat="d in control.store">
+
+        <td ng-bind="$index + 1">S#</td>
+        <td ng-bind="d.name"></td>
+        <td ng-bind="d.age">Age</td>
+        <td ng-bind="d.email">Email</td>
+        <td>
+            <button ng-click="control.editentry($index)">eidt</button>
+        </td>
+    </tr>
+</table>

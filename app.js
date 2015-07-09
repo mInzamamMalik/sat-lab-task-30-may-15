@@ -3,18 +3,20 @@
  */
 
 
-var app = angular.module("myApp",['ngNewRouter']);
+var app = angular.module("myApp",['ngNewRouter','ngMaterial','app.home','app.add','app.view']);
 
 app.controller("AppController",AppController);
 
 AppController.$routeConfig = [
-        {path : "/" , component : "home"}
-    ]
+        {path : '/'     ,    component : 'home'  },
+        {path : '/add'  ,    component : 'add'   },
+        {path : '/view' ,    component : 'view'  }
+    ];
 
 function AppController($router){
 
 
-    this.showform = false;
+    /*this.showform = false;
     this.showentry = false;
     this.addtab = function(){
 
@@ -39,15 +41,15 @@ function AppController($router){
         this.store.push(
 
             {
-                name:   this.new.name,
-                age:    this.new.age,
-                email:  this.new.email
+                name:   this.name,
+                age:    this.age,
+                email:  this.email
             }
         );
 
-        this.new.name = "";
-        this.new.age = "";
-        this.new.email = "";
+        this.name = "";
+        this.age = "";
+        this.email = "";
 
     };
     this.updateentry = function(){
@@ -58,9 +60,9 @@ function AppController($router){
 
     this.clearform = function(){
 
-        this.new.name = "";
-        this.new.age = "";
-        this.new.email = "";
+        thi.name = "";
+        this.age = "";
+        this.email = "";
 
     };
 
@@ -69,9 +71,9 @@ function AppController($router){
 
     this.editentry = function(d){
 
-        this.new.name =   d.name;
-        this.new.age  =   d.age;
-        this.new.email =  d.email;
+        this.name =   d.name;
+        this.age  =   d.age;
+        this.email =  d.email;
 
         this.updatebtn = true;
         this.submitbtn = false;
@@ -79,6 +81,6 @@ function AppController($router){
     }
 
 
-
+*/
 
 }
